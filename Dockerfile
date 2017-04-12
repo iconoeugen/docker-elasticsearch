@@ -5,7 +5,6 @@ RUN yum install -y epel-release && \
     yum -y install java-1.8.0-openjdk.x86_64 nss_wrapper && \
     yum clean all
 
-COPY passwd.in ${HOME}/
 COPY elasticsearch.repo /etc/yum.repos.d/elasticserach.repo
 
 ENV USER elasticsearch
@@ -21,6 +20,7 @@ RUN yum -y install elasticsearch-${ELASTICSEARCH_VERSION}.noarch && \
         mkdir -p "$path" && chown -R $USER:root "$path"; \
     done
 
+COPY passwd.in ${HOME}/
 COPY config ./config
 COPY entrypoint /
 
