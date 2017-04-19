@@ -40,7 +40,7 @@ path.logs: ${LOG_DIR}
 #
 # Lock the memory on startup:
 #
-#bootstrap.memory_lock: true
+bootstrap.memory_lock: ${BOOTSTRAP_MEMORY_LOCK:true}
 #
 # Make sure that the heap size is set to about half the memory available
 # on the system and that the owner of the process is allowed to use this
@@ -52,11 +52,19 @@ path.logs: ${LOG_DIR}
 #
 # Set the bind address to a specific IP (IPv4 or IPv6):
 #
-network.host: 0.0.0.0
+network.host: ${NETWORK_HOST:0.0.0.0}
 #
 # Set a custom port for HTTP:
 #
-#http.port: 9200
+http.port: ${HTTP_PORT:9200}
+#
+# Used to set the transport.bind_host and the transport.publish_host Defaults to transport.host or network.host.
+#
+transport.host: ${TRANSPORT_HOST:0.0.0.0}
+#
+# A bind port range. Defaults to 9300-9400.
+#
+transport.tcp.port: ${TRANSPORT_TCP_PORT:9300-9400}
 #
 # For more information, consult the network module documentation.
 #
