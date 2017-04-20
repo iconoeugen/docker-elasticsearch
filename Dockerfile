@@ -20,8 +20,7 @@ ENV ES_USER=${USER} \
 COPY elasticsearch.repo /etc/yum.repos.d/elasticserach.repo
 ENV ELASTICSEARCH_VERSION 5.3.0-1
 RUN yum -y install elasticsearch-${ELASTICSEARCH_VERSION}.noarch && \
-    yum clean all && \
-    elasticsearch-plugin install -v --batch x-pack
+    yum clean all
 
 COPY passwd.in ${HOME}/
 COPY config ${CONF_DIR}

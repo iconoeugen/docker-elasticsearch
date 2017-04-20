@@ -94,27 +94,3 @@ transport.tcp.port: ${TRANSPORT_TCP_PORT:9300-9400}
 # Require explicit names when deleting indices:
 #
 #action.destructive_requires_name: true
-#
-# ---------------------------------- X-Pack -----------------------------------
-#
-# Set to false to disable X-Pack security. Configure in both elasticsearch.yml and kibana.yml.
-#
-xpack.security.enabled: ${XPACK_SECURITY_ENABLED:false}
-#
-# Set to false to disable X-Pack monitoring. Configure in both elasticsearch.yml and kibana.yml.
-#
-xpack.monitoring.enabled: ${XPACK_MONITORING_ENABLED:false}
-#
-# Set to false to disable X-Pack graph. Configure in both elasticsearch.yml and kibana.yml.
-#
-xpack.graph.enabled: ${XPACK_GRAPH_ENABLED:false}
-#
-# Set to false to disable Watcher. Configure in elasticsearch.yml only.
-#
-xpack.watcher.enabled: ${XPACK_WATCHER_ENABLED:false}
-#
-# Set to false to disable X-Pack reporting. Configure in kibana.yml only.
-
-# https://www.elastic.co/guide/en/x-pack/current/reporting-settings.html#general-reporting-settings
-# unknown setting [xpack.reporting.enabled] did you mean any of [xpack.monitoring.enabled, xpack.security.enabled]?
-#xpack.reporting.enabled: ${XPACK_REPORTING_ENABLED:true}
