@@ -8,7 +8,6 @@ RUN yum install -y epel-release && \
 ENV USER elasticsearch
 ENV HOME /usr/share/elasticsearch
 ENV PATH /usr/share/elasticsearch/bin:$PATH
-ENV ELASTICSEARCH_VERSION 5.3.0-1
 
 ENV ES_USER=${USER} \
     ES_GROUP=root \
@@ -19,8 +18,10 @@ ENV ES_USER=${USER} \
     SCRIPTS_DIR=/etc/elasticsearch/scripts
 
 COPY elasticsearch.repo /etc/yum.repos.d/elasticserach.repo
+ENV ELASTICSEARCH_VERSION 5.3.0-1
 RUN yum -y install elasticsearch-${ELASTICSEARCH_VERSION}.noarch && \
-    yum clean all
+    yum clean all && \
+    elasticsearch-plugin install -v --batch x-pack
 
 COPY passwd.in ${HOME}/
 COPY config ${CONF_DIR}
