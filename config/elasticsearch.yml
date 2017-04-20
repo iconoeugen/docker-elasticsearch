@@ -99,19 +99,19 @@ transport.tcp.port: ${TRANSPORT_TCP_PORT:9300-9400}
 #
 # Set to false to disable X-Pack security. Configure in both elasticsearch.yml and kibana.yml.
 #
-xpack.security.enabled: ${XPACK_SECURITY_ENABLED:true}
+xpack.security.enabled: ${XPACK_SECURITY_ENABLED:false}
 #
 # Set to false to disable X-Pack monitoring. Configure in both elasticsearch.yml and kibana.yml.
 #
-xpack.monitoring.enabled: ${XPACK_MONITORING_ENABLED:true}
+xpack.monitoring.enabled: ${XPACK_MONITORING_ENABLED:false}
 #
 # Set to false to disable X-Pack graph. Configure in both elasticsearch.yml and kibana.yml.
 #
-xpack.graph.enabled: ${XPACK_GRAPH_ENABLED:true}
+xpack.graph.enabled: ${XPACK_GRAPH_ENABLED:false}
 #
 # Set to false to disable Watcher. Configure in elasticsearch.yml only.
 #
-xpack.watcher.enabled: ${XPACK_WATCHER_ENABLED:true}
+xpack.watcher.enabled: ${XPACK_WATCHER_ENABLED:false}
 #
 # Set to false to disable X-Pack reporting. Configure in kibana.yml only.
 
